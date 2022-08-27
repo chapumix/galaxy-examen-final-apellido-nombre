@@ -14,7 +14,7 @@ pipeline {
                 stage('SonarQube') {
                                                 steps {
                                                     script{
-                                                        def scannerHome = tool 'scanner-default';;
+                                                        def scannerHome = tool 'sonarscaner';;
                                                                             withSonarQubeEnv('sonar-server') {
                                                                                 sh "${scannerHome}/bin/sonar-scanner \
                                                                                     -Dsonar.projectKey=labmaven \
