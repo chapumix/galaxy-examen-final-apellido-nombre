@@ -17,8 +17,8 @@ pipeline {
                                                         def scannerHome = tool 'sonarscaner';
                                                                             withSonarQubeEnv('sonar-server') {
                                                                                 sh "${scannerHome}/bin/sonar-scanner \
-                                                                                    -Dsonar.projectKey=labmaven \
-                                                                                    -Dsonar.projectName=labmaven \
+                                                                                    -Dsonar.projectKey=labmaven01 \
+                                                                                    -Dsonar.projectName=labmaven01 \
                                                                                     -Dsonar.sources=src/main \
                                                                                     -Dsonar.sourceEncoding=UTF-8 \
                                                                                     -Dsonar.language=java \
