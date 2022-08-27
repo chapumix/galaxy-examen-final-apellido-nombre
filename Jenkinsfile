@@ -14,12 +14,12 @@ pipeline {
                 stage('SonarQube') {
                                                 steps {
                                                     script{
-                                                        def scannerHome = tool 'sonarscaner';;
+                                                        def scannerHome = tool 'sonarscaner';
                                                                             withSonarQubeEnv('sonar-server') {
                                                                                 sh "${scannerHome}/bin/sonar-scanner \
                                                                                     -Dsonar.projectKey=labmaven \
                                                                                     -Dsonar.projectName=labmaven \
-                                                                                    -Dsonar.sources=`.` \
+                                                                                    -Dsonar.sources=src/main \
                                                                                     -Dsonar.sourceEncoding=UTF-8 \
                                                                                     -Dsonar.language=java \
                                                                                     -Dsonar.tests=src/test \
