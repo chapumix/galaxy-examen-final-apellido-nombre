@@ -17,10 +17,8 @@ pipeline {
                             withSonarQubeEnv('sonar-server') {
                                 sh "${scannerHome}/bin/sonar-scanner \
                                 -Dsonar.projectKey=labmaven \
-                                -Dsonar.sources=. \
-                                -Dsonar.java.binaries=.
-
-                                        }
+                                -Dsonar.projectName=labmaven
+                             }
                             }
                         }
                     }
