@@ -10,16 +10,21 @@ pipeline {
                             archiveArtifacts artifacts: 'target/*-SNAPSHOT.jar', fingerprint: true
                         }
                 }
-                stage('SonarQube analysis') {
-                      steps {
-                        script {
-                          def scannerHome = tool 'sonarscaner';
-                          withSonarQubeEnv('sonar-server') {
-                            sh "${tool("sonarscaner ")}/bin/sonar-scanner -Dsonar.projectKey=labmaven -Dsonar.projectName=labmaven"
-                          }
-                        }
-                      }
-                    }
+
+                stage('SonarQube') {
+                                steps {
+                                    script{
+                                        def scannerHome = tool 'sonarscaner'
+                                        withSonarQubeEnv('sonar-server') {
+                                            sh "${scannerHome}/bin/sonar-scanner \
+                                            -Dsonar.projectKey=labmaven \
+                                            -Dsonar.projectName=labmaven \
+                                            -Dsonar.java.binaries=build/classes
+                                        }
+                                    }
+                                }
+                            }
+
 
         }
 }
