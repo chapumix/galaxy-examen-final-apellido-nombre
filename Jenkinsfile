@@ -7,7 +7,7 @@ pipeline {
                     }
                         steps {
                             sh 'mvn -B -DskipTests clean package'
-                            archiveArtifacts artifacts: 'target/examen-*-SNAPSHOT.jar', fingerprint: true
+                            archiveArtifacts artifacts: 'target/*-SNAPSHOT.jar', fingerprint: true
                         }
                 }
 
