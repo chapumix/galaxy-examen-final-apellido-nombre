@@ -6,7 +6,7 @@ pipeline {
                         docker { image 'maven:3.6.3-openjdk-11-slim' }
                     }
                         steps {
-                            sh 'mvn -B -DskipTests clean package'
+                            sh 'mvn -B -DskipTests package'
                             archiveArtifacts artifacts: 'target/*-SNAPSHOT.jar', fingerprint: true
                         }
                 }
@@ -19,7 +19,7 @@ pipeline {
                                                                                 sh "${scannerHome}/bin/sonar-scanner \
                                                                                     -Dsonar.projectKey=labmaven \
                                                                                     -Dsonar.projectName=labmaven \
-                                                                                    -Dsonar.sources=src/main \
+                                                                                    -Dsonar.sources=`.` \
                                                                                     -Dsonar.sourceEncoding=UTF-8 \
                                                                                     -Dsonar.language=java \
                                                                                     -Dsonar.tests=src/test \
