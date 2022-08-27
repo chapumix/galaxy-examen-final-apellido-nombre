@@ -19,7 +19,7 @@ pipeline {
                                             sh "${scannerHome}/bin/sonar-scanner \
                                             -Dsonar.projectKey=labmaven \
                                             -Dsonar.projectName=labmaven \
-                                            -Dsonar.java.binaries=build/classes
+                                            -Dsonar.java.binaries=build/classes \
                                         }
                                     }
                                 }
