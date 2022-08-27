@@ -21,7 +21,7 @@ pipeline {
                                                                                     -Dsonar.sources=src/main \
                                                                                     -Dsonar.sourceEncoding=UTF-8 \
                                                                                     -Dsonar.language=java \
-                                                                                    -Dsonar.java.binaries=`.`                                                                                     
+                                                                                    -Dsonar.java.binaries=`.` "
                                                                                 }
                                                                             }
                                                     }
